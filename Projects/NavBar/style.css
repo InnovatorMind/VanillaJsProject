@@ -1,0 +1,157 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f4f4;
+  min-height: 100vh;
+}
+
+:root {
+  --primary-color: #8f5d5d;
+  --accent-color: #ff5722;
+  --dark-bg: #2d2c2c;
+  --text-color: #ffffff;
+  --transition-speed: 0.3s;
+  --nav-height: 60px;
+}
+
+#navSystem {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#navBar {
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#logo {
+  height: 40px;
+  user-select: none;
+}
+
+#navB {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+#navB li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+#navB li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+}
+
+#navB li a:hover {
+  color: var(--accent-color);
+}
+
+#hamburger {
+  width: 28px;
+  cursor: pointer;
+  display: none;
+  transition: transform var(--transition-speed) ease;
+}
+
+#hamburger:hover {
+  transform: scale(1.1);
+}
+
+#sideDiv {
+  position: absolute;
+  top: var(--nav-height);
+  right: 0;
+  background: var(--dark-bg);
+  border-bottom-left-radius: 10px;
+  display: none; /* Toggle with JS on mobile */
+  animation: slideIn var(--transition-speed) forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#sideBar {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+#sideBar li {
+  list-style: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#sideBar li a {
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  color: var(--text-color);
+  transition: background var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+}
+
+#sideBar li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-color);
+}
+
+/* Main Content Styling */
+main .content {
+  padding: 20px;
+}
+
+main h1 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+main p {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .hideable {
+    display: none;
+  }
+  #hamburger {
+    display: block;
+  }
+  #sideDiv.show {
+    display: block;
+  }
+}
+
+@media (min-width: 481px) {
+  #sideDiv {
+    display: none;
+  }
+}
+
+
