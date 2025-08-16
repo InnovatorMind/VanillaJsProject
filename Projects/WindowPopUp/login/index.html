@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: "Roboto", "Segoe UI", sans-serif;
+      background-color: #202124; /* dark background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #e8eaed;
+    }
+    .login-box {
+      background: #2d2f31;
+      border-radius: 8px;
+      padding: 30px 40px;
+      width: 360px;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.4);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .logo img {
+      height: 30px;
+      margin-right: 8px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 500;
+    }
+    p.subtext {
+      font-size: 14px;
+      color: #9aa0a6;
+      margin-bottom: 25px;
+    }
+    .account {
+      background: #3c4043;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .account:hover {
+      background: #4a4d51;
+    }
+    .avatar {
+      background: #5f6368;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 16px;
+    }
+    .account-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .account-info .name {
+      font-size: 14px;
+      font-weight: 500;
+      color: #e8eaed;
+    }
+    .account-info .email {
+      font-size: 13px;
+      color: #9aa0a6;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #9aa0a6;
+      text-align: center;
+    }
+    .footer a {
+      color: #8ab4f8;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <div class="logo">
+      <img src="../google.png" alt="Google">
+      <span style="font-size: 14px; color:#e8eaed;">Sign in with Google</span>
+    </div>
+
+    <h2>Choose an account</h2>
+    <p class="subtext">to continue to <strong>YourApp</strong></p>
+
+    <div class="account" onclick="login('amarjeet876@gmail.com')">
+      <div class="avatar">A</div>
+      <div class="account-info">
+        <span class="name">Mark Rober</span>
+        <span class="email">markrober@gmail.com</span>
+      </div>
+    </div>
+
+    <div class="account" onclick="login('amarjeet.dev@gmail.com')">
+      <div class="avatar">A</div>
+      <div class="account-info">
+        <span class="name">Mark Rober</span>
+        <span class="email">rober.dev@gmail.com</span>
+      </div>
+    </div>
+
+    <div class="account" onclick="login('other')">
+      <div class="avatar">+</div>
+      <div class="account-info">
+        <span class="name">Use another account</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      Before using this app, you can review<br>
+      <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a>
+    </div>
+  </div>
+
+  <script>
+    function login(email) {
+      // Simulate login
+      setTimeout(() => {
+        window.close();
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
