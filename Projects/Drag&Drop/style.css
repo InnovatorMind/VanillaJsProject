@@ -1,0 +1,47 @@
+#bucket {
+    border: 2px dotted blue;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dragMe {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-color: lightblue;
+    text-align: center;
+    line-height: 120px;
+    border: 2px solid navy;
+    cursor: grab;
+    margin-top: 40px;
+}
+
+.container {
+    padding: 12px;
+}
+
+.dropZone {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px dashed gray;
+    text-align: center;
+    line-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
+
+/* Select by order */
+.dropZone:nth-child(1) {
+    right: 0;
+}
+
+.dropZone:nth-child(2) {
+    right: 0;
+    bottom: 0;
+}

@@ -5,55 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag & Drop</title>
-    <style>
-        #bucket {
-            border: 2px dotted blue;
-            width: 200px;
-            height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #dragMe {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            background-color: lightblue;
-            text-align: center;
-            line-height: 120px;
-            border: 2px solid navy;
-            cursor: grab;
-            margin-top: 40px;
-        }
-        
-        .container {
-            padding: 12px;
-        }
-
-        .dropZone {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 2px dashed gray;
-            text-align: center;
-            line-height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 40px;
-        }
-
-        /* Select by order */
-        .dropZone:nth-child(1) {
-            right: 0;
-        }
-
-        .dropZone:nth-child(2) {
-            right: 0;
-            bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -66,52 +18,7 @@
          <div class="dropZone">Drop here 2</div>
      </div>
 
-    <script>
-        const dragItem = document.getElementById("dragMe");
-        const dropZones = document.querySelectorAll(".dropZone");
-        const bucket = document.getElementById("bucket");
-        // Start drag
-        dragItem.ondragstart = function (event) {
-            console.log("hiii....")
-            event.dataTransfer.setData("text", event.target.id);
-        };
-
-        dropZones.forEach(zone => {
-            zone.ondragover = function (event) {
-                event.preventDefault(); // allow dropping
-            };
-
-            zone.ondrop = function (event) {
-                event.preventDefault();
-                const data = event.dataTransfer.getData("text");
-                const draggedElement = document.getElementById(data);
-
-                zone.innerHTML = ""; // clear text
-                zone.appendChild(draggedElement);
-
-                // Reset style
-                draggedElement.style.position = "static";
-                draggedElement.style.margin = "0";
-            };
-
-            bucket.ondragover = function (event) {
-                event.preventDefault(); // allow dropping
-            };
-
-            bucket.ondrop = function (event) {
-                event.preventDefault();
-                const data = event.dataTransfer.getData("text");
-                const draggedElement = document.getElementById(data);
-
-                bucket.innerHTML = ""; // clear text
-                bucket.appendChild(draggedElement);
-
-                // Reset style
-                draggedElement.style.position = "static";
-                draggedElement.style.margin = "0";
-            };
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
