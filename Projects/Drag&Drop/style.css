@@ -19,6 +19,10 @@
     margin-top: 40px;
 }
 
+.app {
+    max-width: 800px;
+}
+
 .container {
     padding: 12px;
 }
@@ -44,4 +48,14 @@
 .dropZone:nth-child(2) {
     right: 0;
     bottom: 0;
+}
+
+@media (min-width: 640px) {
+ .dropZone {
+    width: 500px;
+    margin-right: 100px;
+ }
+ #bucket {
+    margin-left: 100px;
+ }
 }
